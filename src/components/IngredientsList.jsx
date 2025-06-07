@@ -1,6 +1,6 @@
 function IngredientsList(props)
 {
-    const thingsElements = props.items.map(thing => <p className="elements" key={thing}>{thing}</p>)
+    const thingsElements = props.items.map(thing =><div className="elements" key={thing}> <p >{thing}</p><button onClick={() => props.onRemove(thing)} className="cross">X</button></div>)
     return (
         <>
          <section>

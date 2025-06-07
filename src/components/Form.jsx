@@ -23,8 +23,10 @@ function Form(props) {
   React.useEffect(() => {
         if (recipe !== "" && recipeSection.current !== null) {
             recipeSection.current.scrollIntoView({behavior: "smooth"})
-        }
-    }, [recipe])
+        }}, [recipe])
+    const handleRemove = (itemToRemove) => {
+         setIngredients(prevItems => prevItems.filter(item => item !== itemToRemove));
+        };
   return (
     <>
       <form action={sub}>
@@ -38,7 +40,7 @@ function Form(props) {
         <button id="sub">+ Add Ingredients</button>
       </form>
 
-      {ingredients.length > 0 && <IngredientsList ref={recipeSection} items={ingredients} click={getRecipe} />}
+      {ingredients.length > 0 && <IngredientsList ref={recipeSection} onRemove={handleRemove} items={ingredients} click={getRecipe} />}
 
       {loading && (
         <div className="loader">

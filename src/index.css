@@ -147,6 +147,22 @@ main{
   margin: 5px;
   padding: 5px 10px;
   border-radius: 5px;
-  display: "inline-block";
+  display: flex;
   color: white;
+  justify-content: space-between;
+  align-items: center;
+}
+.cross
+{
+  height:25px;
+  width:25px;
+  font-size: 22px;
+  font-weight: bolder;
+  color:red;
+  background-color: #eda099;
+  border:transparent
+}
+.cross:hover
+{
+  border:1px solid white;
 }
