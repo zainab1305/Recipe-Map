@@ -27,6 +27,13 @@ function Form(props) {
     const handleRemove = (itemToRemove) => {
          setIngredients(prevItems => prevItems.filter(item => item !== itemToRemove));
         };
+        const loaderr=React.useRef(null)
+        React.useEffect(() => {
+          if(loading)
+          {
+            loaderr.current.scrollIntoView()
+          }
+        })
   return (
     <>
       <form action={sub}>
@@ -43,7 +50,7 @@ function Form(props) {
       {ingredients.length > 0 && <IngredientsList ref={recipeSection} onRemove={handleRemove} items={ingredients} click={getRecipe} />}
 
       {loading && (
-        <div className="loader">
+        <div className="loader" ref={loaderr}>
            <img src={reshe} alt="Logo"></img>
            <p>Finding your perfect recipe...</p>
         </div>
