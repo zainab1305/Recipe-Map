@@ -10,7 +10,6 @@ function Recipe(props)
         <div ><ReactMarkdown remarkPlugins={[remarkGfm]}>
                 {props.cook}
             </ReactMarkdown></div>
-            <h3>Enjoy Your foodddd!!!</h3>
             </div>
             </main>
     )

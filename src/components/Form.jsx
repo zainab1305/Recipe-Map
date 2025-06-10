@@ -31,7 +31,7 @@ function Form(props) {
         React.useEffect(() => {
           if(loading)
           {
-            loaderr.current.scrollIntoView()
+            loaderr.current.scrollIntoView({behavior: "smooth"})
           }
         })
   return (
